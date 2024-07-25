@@ -70,20 +70,25 @@ aside {
 
 /*Skills*/
 .skills ul {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; /* ensures space is distributed evenly */
 }
 
 .skills li {
-	width: 50%;
-	margin-bottom: 5px;
+    padding-right: 10px;
+    width: 45%; /* slightly less to provide more gap */
+    margin-bottom: 5px;
 }
 
+
 .skills .name {
-	font-weight: 700;
-	color: RGB(40,40,40);
+    font-weight: 700;
+    color: RGB(40,40,40);
+    display: block; /* ensure it behaves like a block element */
 }
+
 
 /*Referrals*/
 .reference {
