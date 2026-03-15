@@ -1,372 +1,414 @@
 <!DOCTYPE html>
-<!-- saved from url=(0099)http://localhost:5186/?FileName=software-engineer&Layout=%5CViews%5CShared%5CLayouts%5CFancy.cshtml -->
-<html lang="en"><head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natalie Goulett - Epidemiologist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --line: #dbe3ef;
+      --chip: #eef4ff;
+    }
 
+    * { box-sizing: border-box; }
 
-	<title>Natalie Goulett - Epidemiologist</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="./styles.css">
+    body {
+      margin: 0;
+      font-family: 'Trebuchet MS', Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #eef3fb 0%, var(--bg) 100%);
+      line-height: 1.45;
+    }
 
-	<link href="./css" rel="stylesheet" type="text/css">
-	<link href="./css(1)" rel="stylesheet" type="text/css">
-	<link href="./css(2)" rel="stylesheet" type="text/css">
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
 
-	<!--<link rel="stylesheet" href="./bootstrap-icons.min.css"  integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer">-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
-	<style>
-		body {
-			font-family: 'Trebuchet MS', sans-serif;
-		}
-	</style>
+    main {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    aside, article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+    }
+
+    aside {
+      padding: 28px 24px;
+      position: sticky;
+      top: 20px;
+    }
+
+    article {
+      padding: 30px 32px;
+    }
+
+    .portrait {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .portrait img {
+      width: 128px;
+      height: 128px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #dbeafe;
+      margin-bottom: 14px;
+      background: #e5e7eb;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.9rem;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      color: var(--accent);
+      font-weight: 700;
+      margin-top: 6px;
+      display: block;
+    }
+
+    section + section {
+      margin-top: 26px;
+    }
+
+    h2, h3 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 10px 0 14px;
+    }
+
+    .contact-list p,
+    .meta-list p {
+      margin: 0 0 12px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--text);
+    }
+
+    .contact-list i,
+    .meta-list i,
+    h2 i,
+    h3 i {
+      color: var(--accent);
+      min-width: 18px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .dense,
+    .bullet-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .dense li,
+    .bullet-list li {
+      margin-bottom: 8px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills span {
+      background: var(--chip);
+      border: 1px solid #d8e7ff;
+      color: #1e3a8a;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .experience {
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .experience:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .header h3 {
+      margin-bottom: 2px;
+    }
+
+    .header small,
+    .preamble,
+    .date-block,
+    .location-block {
+      color: var(--muted);
+      display: block;
+    }
+
+    .date-block {
+      font-weight: 700;
+      color: var(--text);
+      text-align: right;
+    }
+
+    .summary {
+      font-size: 1.02rem;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+      }
+
+      .header {
+        flex-direction: column;
+      }
+
+      .date-block {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
-<body data-new-gr-c-s-check-loaded="14.1188.0" data-gr-ext-installed="">
+<body>
+  <div class="container">
+    <main>
+      <aside>
+        <section class="portrait">
+          <img src="./portrait.jpg" alt="Portrait of Natalie Goulett">
+          <h1>Natalie Goulett</h1>
+          <small class="subtitle">Epidemiologist</small>
+        </section>
 
-	<div class="container">
+        <section class="contact-list">
+          <h3><i class="bi bi-person-lines-fill"></i>Contact</h3>
+          <hr>
+          <p><i class="bi bi-phone-fill"></i><span>(904) 316-2747</span></p>
+          <p><i class="bi bi-envelope-at-fill"></i><a href="mailto:nataliegoulett@gmail.com">nataliegoulett@gmail.com</a></p>
+          <p><i class="bi bi-geo-alt-fill"></i><span>6560 NW 7th St, Miami, FL 33126</span></p>
+          <p><i class="bi bi-github"></i><a href="https://github.com/Goulett" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+          <p><i class="bi bi-linkedin"></i><a href="https://linkedin.com/in/natalie-goulett" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        </section>
 
-		
+        <section>
+          <h3><i class="bi bi-tools"></i>Technical Skills</h3>
+          <hr>
+          <ul class="dense">
+            <li>R and R package development</li>
+            <li>Tidyverse, Tidymodels, and Shiny</li>
+            <li>Power BI, ArcGIS, and SAS</li>
+            <li>Excel, SQL, and REDCap</li>
+                      </ul>
+        </section>
 
-<link rel="stylesheet" href="./fancy.css">
+        <section>
+          <h3><i class="bi bi-lightning-charge-fill"></i>Core Strengths</h3>
+          <hr>
+          <div class="skills">
+            <span>Research Design</span>
+            <span>Teaching</span>
+            <span>Process Improvement</span>
+            <span>Investigation</span>
+            <span>Text Mining</span>
+            <span>Real-World Data</span>
+            <span>Data Visualization</span>
+          </div>
+        </section>
+      </aside>
 
-<main>
-	<aside>
+      <article>
+        <section>
+          <h2><i class="bi bi-person-badge-fill"></i>Professional Summary</h2>
+          <hr>
+          <p class="summary">Epidemiologist who bridges rigorous quantitative methods and clear communication, with a background spanning clinical, public health, and academic research environments. Experienced in mentoring students and collaborating across disciplines to support reproducible, evidence-based research.</p>
+        </section>
 
-		
+        <section>
+          <h2><i class="bi bi-mortarboard-fill"></i>Education</h2>
+          <hr>
 
-<section class="portrait">
+          <div class="experience">
+            <div class="header">
+              <div>
+                <h3>Master of Public Health, Biostatistics Concentration</h3>
+                <small>Florida International University</small>
+                <small class="preamble">3.9 GPA | Dean's Excellence Award</small>
+              </div>
+              <div>
+                <span class="date-block">May 2025</span>
+                <small class="location-block">Miami, FL</small>
+              </div>
+            </div>
+          </div>
 
-	<img src="./portrait.jpg">
+          <div class="experience">
+            <div class="header">
+              <div>
+                <h3>Bachelor of Science in Biology</h3>
+                <small>University of North Florida</small>
+                <small class="preamble">3.8 GPA | FL Bright Futures, Gray Scholarships</small>
+              </div>
+              <div>
+                <span class="date-block">August 2019</span>
+                <small class="location-block">Jacksonville, FL</small>
+              </div>
+            </div>
+          </div>
+        </section>
 
-	<h1>Natalie Goulett</h1>
-	<small>Epidemiologist</small>
+        <section>
+          <h2><i class="bi bi-graph-up"></i>Professional Experience</h2>
+          <hr>
 
-</section>
-<section>
-	<h3>
-		<i class="bi bi-person-lines-fill"></i>
-		Contact
-	</h3>
-	<hr>
+          <div class="experience">
+            <div class="header">
+              <div>
+                <h3>Biological Scientist IV - Epidemiologist</h3>
+                <small>Florida Department of Health</small>
+              </div>
+              <div>
+                <span class="date-block">May 2025 - March 2026</span>
+                <small class="location-block">Miami, FL</small>
+              </div>
+            </div>
+            <div class="responsibilities">
+              <ul class="bullet-list">
+                <li>Led investigation of Lyme disease cases, including chart review, patient interviews, and education</li>
+                <li>Performed surveillance and epidemiologic investigations of disease outbreaks, poisonings, and reportable conditions.</li>
+                <li>Conducted analyses of health issues using SAS, R, and ArcGIS to provide reports and presentations to stakeholders.</li>
+                <li>Created Power BI dashboards to monitor spatiotemporal trends in emergency department visits and fatalities.</li>
+                <li>Contributed to design of an NLP-based free-text analysis workflow for classifying injury-related emergency department visits.</li>
+                <li>Coordinated training and activities for interns and volunteers, providing guidance on their research projects.</li>
+              </ul>
+            </div>
+          </div>
 
-	<p>
-		<i class="bi bi-phone-fill"></i>
-		+1 (904) 316-2747
-	</p>
+          <div class="experience">
+            <div class="header">
+              <div>
+                <h3>Healthcare Simulation Operations Specialist</h3>
+                <small>Florida International University</small>
+              </div>
+              <div>
+                <span class="date-block">February 2021 - May 2025</span>
+                <small class="location-block">Miami, FL</small>
+              </div>
+            </div>
+            <div class="responsibilities">
+              <ul class="bullet-list">
+                <li>Led and supported student staff to deliver high-quality simulation experiences and Basic Life Support courses.</li>
+                <li>Collected and analyzed Qualtrics satisfaction survey data to present quality improvement opportunities.</li>
+              </ul>
+            </div>
+          </div>
 
-	<p>
-		<i class="bi bi-envelope-at-fill"></i>
-		ngoul003@fiu.edu
-	</p>
+          <div class="experience">
+            <div class="header">
+              <div>
+                <h3>Certified Nursing Assistant</h3>
+                <small>University of Miami Hospital</small>
+              </div>
+              <div>
+                <span class="date-block">December 2019 - July 2020</span>
+                <small class="location-block">Miami, FL</small>
+              </div>
+            </div>
+            <div class="responsibilities">
+              <ul class="bullet-list">
+                <li>Provided comprehensive care for up to 15 patients daily while adhering to infection control protocols.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-	<p>
-		<i class="bi bi-github"></i>
-		<a href="https://github.com/Goulett" target="_blank">GitHub</a>
-	</p>
+        <section>
+          <h2><i class="bi bi-easel-fill"></i>Fellowships and Teaching Experience</h2>
+          <hr>
 
-	<p>
-		<i class="bi bi-linkedin"></i>
-		<a href="https://linkedin.com/in/natalie-goulett" target="_blank">LinkedIn</a>
-	</p>
+          <div class="experience">
+            <div class="header">
+              <div>
+                <h3>National Data Science Teaching Fellow, Train the Trainers Program</h3>
+                <small>NIH-funded fellowship</small>
+              </div>
+              <div>
+                <span class="date-block">Fall '25, Spring '26</span>
+              </div>
+            </div>
+            <div class="responsibilities">
+              <ul class="bullet-list">
+                <li>Teaches 10-week R courses for health researchers focused on R fundamentals, data wrangling, visualization, version control with Git, Quarto and R Markdown, and functions.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-</section>
-<section class="logical-section">
-	<h3>
-		<i class="bi bi-code"></i>
-		Languages
-	</h3>
-	<hr>
-
-	<ul class="dense">
-			<li>R</li>
-			<li>R Package Development</li>
-			<li>SAS</li>
-			<li>SQL</li>
-	</ul>
-
-</section>
-<section class="logical-section">
-	<h3>
-		<i class="bi bi-wrench"></i>
-		Tools
-	</h3>
-	<hr>
-
-	<ul class="dense">
-			<li>Tidyverse</li>
-			<li>Tidymodels</li>
-			<li>Shiny</li>
-			<li>Power BI</li>
-			<li>ArcGIS</li>
-			<li>Excel</li>
-			<li>REDCap</li>
-	</ul>
-
-</section>
-
-	</aside>
-	<article>
-
-		
-<section class="logical-section">
-	<h2>
-		<i class="bi bi-person-badge-fill"></i>
-		Introduction
-	</h2>
-	<hr>
-
-	Epidemiologist who bridges rigorous quantitative methods and clear communication, with a background spanning clinical, public health, and academic research environments. Experienced in mentoring students and collaborating across disciplines to support reproducible, evidence-based research.
-
-</section>
-		
-<section class="logical-section">
-	<h2>
-		<i class="bi bi-list-check"></i>
-		Key Skill Summary
-	</h2>
-	<hr>
-	
-	<div class="logical-section skills">
-		<ul>
-				<li><span class="name">Research Design</span></li>
-				<li><span class="name">Teaching</span></li>
-				<li><span class="name">Process Improvement</span></li>
-				<li><span class="name">Real-World Data</span></li>
-				<li><span class="name">Investigation</span></li>
-				<li><span class="name">Data Visualization</span></li>
-				<li><span class="name">Statistical Analysis</span></li>
-				<li><span class="name">Scientific Writing</span></li>
-				<li><span class="name">Public Speaking</span></li>
-				<li><span class="name">Patient Care</span></li>
-				<li><span class="name">Leadership</span></li>
-		</ul>
-	</div>
-
-</section>
-		
-
-<section>
-	<h2>
-		<i class="bi bi-mortarboard-fill"></i>
-		Education
-	</h2>
-	<hr>
-
-	<div>
-				<div class="experience">
-
-					<div class="logical-section">
-						<div class="header">
-							<div>
-								<h3>Master of Public Health, Biostatistics Concentration</h3>
-								<small>Florida International University</small>
-							</div>
-							<div>
-								<h3>May 2025</h3>
-								<small>Miami, FL</small>
-							</div>
-						</div>
-							<small class="preamble">
-								3.9 GPA | Dean&apos;s Excellence Award
-							</small>
-					</div>
-
-				</div>
-				<div class="experience">
-
-					<div class="logical-section">
-						<div class="header">
-							<div>
-								<h3>Bachelor of Science in Biology</h3>
-								<small>University of North Florida</small>
-							</div>
-							<div>
-								<h3>August 2019</h3>
-								<small>Jacksonville, FL</small>
-							</div>
-						</div>
-							<small class="preamble">
-								3.8 GPA | FL Bright Futures, Gray Scholarships
-							</small>
-					</div>
-
-				</div>
-	</div>
-
-</section>
-		
-<section>
-	<h2>
-		<i class="bi bi-graph-up"></i>
-		Experience
-	</h2>
-	<hr>
-
-	<div>
-				<div class="experience">
-
-					<div class="logical-section">
-						<div class="header">
-							<div>
-								<h3>Biological Scientist IV - Epidemiologist</h3>
-								<small>Florida Department of Health</small>
-							</div>
-							<div>
-								<h3>May 2025 &ndash; March 2026</h3>
-								<small>Miami, FL</small>
-							</div>
-						</div>
-					</div>
-						<div class="responsibilities experience-section">
-							<ul>
-									<li>Led investigation of Lyme disease cases, including chart review, patient interviews, and education</li>
-									<li>Performed surveillance and epidemiologic investigations of disease outbreaks, poisonings, and reportable conditions</li>
-									<li>Conducted analyses of health issues using SAS, R, and ArcGIS to provide reports and presentations to stakeholders</li>
-									<li>Created Power BI dashboards to monitor spatiotemporal trends in emergency department (ED) visits and fatalities</li>
-									<li>Contributed to design of an NLP-based free-text analysis workflow for classifying injury-related ED visits</li>
-									<li>Coordinated training and activities for interns and volunteers, providing guidance on their research projects</li>
-							</ul>
-						</div>
-				</div>
-				<div class="experience">
-
-					<div class="logical-section">
-						<div class="header">
-							<div>
-								<h3>Healthcare Simulation Operations Specialist</h3>
-								<small>Florida International University</small>
-							</div>
-							<div>
-								<h3>February 2021 &ndash; May 2025</h3>
-								<small>Miami, FL</small>
-							</div>
-						</div>
-					</div>
-						<div class="responsibilities experience-section">
-							<ul>
-									<li>Led and supported student staff to deliver high-quality simulation experiences and Basic Life Support (BLS) courses</li>
-									<li>Collected and analyzed Qualtrics survey data to present quality improvement opportunities</li>
-							</ul>
-						</div>
-				</div>
-				<div class="experience">
-
-					<div class="logical-section">
-						<div class="header">
-							<div>
-								<h3>Certified Nursing Assistant</h3>
-								<small>University of Miami Hospital</small>
-							</div>
-							<div>
-								<h3>December 2019 &ndash; July 2020</h3>
-								<small>Miami, FL</small>
-							</div>
-						</div>
-					</div>
-						<div class="responsibilities experience-section">
-							<ul>
-									<li>Provided comprehensive care for up to 15 patients daily while adhering to infection control protocols</li>
-							</ul>
-						</div>
-				</div>
-
-	</div>
-
-</section>
-
-<section>
-	<h2>
-		<i class="bi bi-award-fill"></i>
-		Fellowships &amp; Teaching
-	</h2>
-	<hr>
-
-	<div>
-				<div class="experience">
-
-					<div class="logical-section">
-						<div class="header">
-							<div>
-								<h3>National Data Science Teaching Fellow</h3>
-								<small>Train the Trainers Program (NIH-funded)</small>
-							</div>
-							<div>
-								<h3>Fall &#x27;25, Spring &#x27;26</h3>
-							</div>
-						</div>
-					</div>
-						<div class="responsibilities experience-section">
-							<ul>
-									<li>Teaches 10-week R courses for health researchers focused on R fundamentals, data wrangling, visualization, version control with Git, Quarto/R Markdown, and functions</li>
-							</ul>
-						</div>
-				</div>
-
-	</div>
-
-</section>
-
-<section>
-	<h2>
-		<i class="bi bi-folder-fill"></i>
-		Select Projects
-	</h2>
-	<hr>
-
-	<div class="logical-section">
-		<ul>
-			<li>Contributed to survey-weighted analyses evaluating associations between cannabis use and biological aging outcomes using nationally representative NHANES data</li>
-			<li>Identified predictors of early leiomyosarcoma recurrence using Cox and Fine-Gray models and developed a Shiny app used by an oncology team to visualize competing risks</li>
-			<li>Evaluated associations between heavy metal exposures and parkinsonism using mixture modeling and elastic net</li>
-			<li>Collaborated with professors on survey design and analysis to evaluate the effectiveness of a new training program</li>
-			<li>Contributed to development of REDCapSync and nhanesdata packages to support reproducible data pipelines</li>
-		</ul>
-	</div>
-
-</section>
-
-	</article>
-</main>
-
-	</div>
-
-	<div class="hidden-on-print">
-
-		
-
-
-
-<script>
-	function submit() {
-		document.getElementsByTagName("form").submit();
-	}
-</script>
-
-	</div>
-
-
-<!-- Visual Studio Browser Link -->
-<script type="text/javascript" src="./browserLink" async="async" id="__browserLink_initializationData" data-requestid="5e5aaca589584026888d140c4797ea99" data-requestmappingfromserver="false" data-connecturl="http://localhost:54328/f0d2636146174d8da72c18f9f52ed882/browserLink"></script>
-<!-- End Browser Link -->
-<script src="./aspnetcore-browser-refresh.js.download"></script>
-
-<div id="hl-aria-live-message-container" aria-live="polite" class="visually-hidden"></div><div id="hl-aria-live-alert-container" role="alert" aria-live="assertive" class="visually-hidden"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
-      div.grammarly-desktop-integration {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select:none;
-        user-select:none;
-      }
-
-      div.grammarly-desktop-integration:before {
-        content: attr(data-content);
-      }
-    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
+        <section>
+          <h2><i class="bi bi-kanban-fill"></i>Selected Projects</h2>
+          <hr>
+          <ul class="bullet-list">
+            <li>Contributed to survey-weighted analyses evaluating associations between cannabis use and biological aging outcomes using nationally representative NHANES data.</li>
+            <li>Identified predictors of early leiomyosarcoma recurrence using Cox and Fine-Gray models and developed a Shiny app used by an oncology team to visualize competing risks.</li>
+            <li>Evaluated associations between heavy metal exposures and parkinsonism using mixture modeling and elastic net.</li>
+            <li>Collaborated with professors on survey design and analysis to evaluate the effectiveness of a new training program.</li>
+            <li>Contributed to development of REDCapSync and nhanesdata packages to support reproducible data pipelines.</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
