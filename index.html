@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Natalie Goulett - Epidemiologist</title>
+  <title>Natalie Goulett (Natalie Neugaard) - Epidemiologist</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
   <style>
     :root {
@@ -15,9 +15,7 @@
       --line: #dbe3ef;
       --chip: #eef4ff;
     }
-
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       font-family: 'Trebuchet MS', Arial, sans-serif;
@@ -25,42 +23,35 @@
       background: linear-gradient(180deg, #eef3fb 0%, var(--bg) 100%);
       line-height: 1.45;
     }
-
     .container {
       max-width: 1180px;
       margin: 0 auto;
       padding: 32px 20px;
     }
-
     main {
       display: grid;
       grid-template-columns: 320px minmax(0, 1fr);
       gap: 24px;
       align-items: start;
     }
-
     aside, article {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 18px;
       box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
     }
-
     aside {
       padding: 28px 24px;
       position: sticky;
       top: 20px;
     }
-
     article {
       padding: 30px 32px;
     }
-
     .portrait {
       text-align: center;
       margin-bottom: 26px;
     }
-
     .portrait img {
       width: 128px;
       height: 128px;
@@ -70,47 +61,31 @@
       margin-bottom: 14px;
       background: #e5e7eb;
     }
-
     h1 {
       margin: 0;
-      font-size: 1.9rem;
+      font-size: 1.78rem;
       line-height: 1.15;
     }
-
     .subtitle {
       color: var(--accent);
       font-weight: 700;
       margin-top: 6px;
       display: block;
     }
-
-    section + section {
-      margin-top: 26px;
-    }
-
+    section + section { margin-top: 32px; }
     h2, h3 {
       margin: 0;
       display: flex;
       align-items: center;
       gap: 10px;
     }
-
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-    }
-
-    h3 {
-      font-size: 1.05rem;
-      margin-bottom: 10px;
-    }
-
+    h2 { font-size: 1.25rem; margin-bottom: 10px; }
+    h3 { font-size: 1.05rem; margin-bottom: 10px; }
     hr {
       border: 0;
       border-top: 1px solid var(--line);
       margin: 10px 0 14px;
     }
-
     .contact-list p,
     .meta-list p {
       margin: 0 0 12px;
@@ -119,7 +94,6 @@
       align-items: flex-start;
       color: var(--text);
     }
-
     .contact-list i,
     .meta-list i,
     h2 i,
@@ -127,33 +101,27 @@
       color: var(--accent);
       min-width: 18px;
     }
-
     a {
       color: var(--accent);
       text-decoration: none;
     }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
+    a:hover { text-decoration: underline; }
     .dense,
-    .bullet-list {
+    .bullet-list,
+    .pub-list {
       margin: 0;
       padding-left: 18px;
     }
-
     .dense li,
-    .bullet-list li {
+    .bullet-list li,
+    .pub-list li {
       margin-bottom: 8px;
     }
-
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
-
     .skills span {
       background: var(--chip);
       border: 1px solid #d8e7ff;
@@ -163,28 +131,21 @@
       font-size: 0.94rem;
       font-weight: 600;
     }
-
     .experience {
       padding: 18px 0;
       border-top: 1px solid var(--line);
     }
-
     .experience:first-of-type {
       border-top: 0;
       padding-top: 0;
     }
-
     .header {
       display: flex;
       justify-content: space-between;
       gap: 16px;
       align-items: flex-start;
     }
-
-    .header h3 {
-      margin-bottom: 2px;
-    }
-
+    .header h3 { margin-bottom: 2px; }
     .header small,
     .preamble,
     .date-block,
@@ -192,34 +153,56 @@
       color: var(--muted);
       display: block;
     }
-
     .date-block {
       font-weight: 700;
       color: var(--text);
       text-align: right;
+      white-space: nowrap;
     }
-
+    .location-block {
+      text-align: right;
+    }
     .summary {
       font-size: 1.02rem;
       margin: 0;
     }
-
+    .strength-item { margin-bottom: 13px; }
+    .strength-item:last-child { margin-bottom: 0; }
+    .strength-item h4 {
+      margin: 0 0 3px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+    }
+    .strength-item p {
+      margin: 0;
+      font-size: 0.80rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .project-item { margin-bottom: 16px; }
+    .project-item:last-child { margin-bottom: 0; }
+    .project-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+    .project-item p {
+      margin: 0;
+    }
+    .pub-subsection + .pub-subsection { margin-top: 20px; }
+    .pub-subsection h4 {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+    .pub-title { font-style: italic; }
     @media (max-width: 900px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-
-      aside {
-        position: static;
-      }
-
-      .header {
-        flex-direction: column;
-      }
-
-      .date-block {
-        text-align: left;
-      }
+      main { grid-template-columns: 1fr; }
+      aside { position: static; }
+      .header { flex-direction: column; }
+      .date-block, .location-block { text-align: left; }
     }
   </style>
 </head>
@@ -229,16 +212,15 @@
       <aside>
         <section class="portrait">
           <img src="./portrait.jpg" alt="Portrait of Natalie Goulett">
-          <h1>Natalie Goulett</h1>
+          <h1>Natalie Goulett<br>(Natalie Neugaard)</h1>
           <small class="subtitle">Epidemiologist</small>
         </section>
 
         <section class="contact-list">
           <h3><i class="bi bi-person-lines-fill"></i>Contact</h3>
           <hr>
-          <p><i class="bi bi-phone-fill"></i><span>(904) 316-2747</span></p>
           <p><i class="bi bi-envelope-at-fill"></i><a href="mailto:nataliegoulett@gmail.com">nataliegoulett@gmail.com</a></p>
-          <p><i class="bi bi-geo-alt-fill"></i><span>6560 NW 7th St, Miami, FL 33126</span></p>
+          <p><i class="bi bi-geo-alt-fill"></i><span>Miami, FL</span></p>
           <p><i class="bi bi-github"></i><a href="https://github.com/Goulett" target="_blank" rel="noopener noreferrer">GitHub</a></p>
           <p><i class="bi bi-linkedin"></i><a href="https://linkedin.com/in/natalie-goulett" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
         </section>
@@ -246,25 +228,39 @@
         <section>
           <h3><i class="bi bi-tools"></i>Technical Skills</h3>
           <hr>
-          <ul class="dense">
-            <li>R and R package development</li>
-            <li>Tidyverse, Tidymodels, and Shiny</li>
-            <li>Power BI, ArcGIS, and SAS</li>
-            <li>Excel, SQL, and REDCap</li>
-                      </ul>
+          <div class="skills">
+            <span>R</span>
+            <span>R Package Development</span>
+            <span>Tidyverse</span>
+            <span>Tidymodels</span>
+            <span>Shiny</span>
+            <span>SAS</span>
+            <span>STATA</span>
+            <span>Excel</span>
+            <span>SQL</span>
+            <span>REDCap</span>
+            <span>Power BI</span>
+            <span>ArcGIS</span>
+            <span>Git</span>
+          </div>
         </section>
 
         <section>
           <h3><i class="bi bi-lightning-charge-fill"></i>Core Strengths</h3>
           <hr>
-          <div class="skills">
-            <span>Research Design</span>
-            <span>Teaching</span>
-            <span>Process Improvement</span>
-            <span>Investigation</span>
-            <span>Text Mining</span>
-            <span>Real-World Data</span>
-            <span>Data Visualization</span>
+          <div>
+            <div class="strength-item">
+              <h4>Epidemiology &amp; Public Health Practice</h4>
+              <p>Outbreak Investigation &bull; Disease Surveillance &bull; Real-World Evidence and Population Health Analytics &bull; Injury Epidemiology</p>
+            </div>
+            <div class="strength-item">
+              <h4>Statistical Modeling &amp; Machine Learning</h4>
+              <p>Predictive and Inferential Modeling &bull; Tree-based and Regression Modeling &bull; Survival and Longitudinal Analysis &bull; Natural Language Processing &bull; Missing Data Methods</p>
+            </div>
+            <div class="strength-item">
+              <h4>Research &amp; Communication</h4>
+              <p>Experimental Design &bull; Teaching and Mentorship &bull; Reproducible Research &bull; Responsible Use of AI &bull; Data Quality and Validation &bull; Interactive Dashboards and Visualizations &bull; Real-World Data</p>
+            </div>
           </div>
         </section>
       </aside>
@@ -297,7 +293,7 @@
           <div class="experience">
             <div class="header">
               <div>
-                <h3>Bachelor of Science in Biology</h3>
+                <h3>Bachelor of Science in Biology, Biomedical Sciences Concentration</h3>
                 <small>University of North Florida</small>
                 <small class="preamble">3.8 GPA | FL Bright Futures, Gray Scholarships</small>
               </div>
@@ -324,16 +320,14 @@
                 <small class="location-block">Miami, FL</small>
               </div>
             </div>
-            <div class="responsibilities">
-              <ul class="bullet-list">
-                <li>Led investigation of Lyme disease cases, including chart review, patient interviews, and education</li>
-                <li>Performed surveillance and epidemiologic investigations of disease outbreaks, poisonings, and reportable conditions.</li>
-                <li>Conducted analyses of health issues using SAS, R, and ArcGIS to provide reports and presentations to stakeholders.</li>
-                <li>Created Power BI dashboards to monitor spatiotemporal trends in emergency department visits and fatalities.</li>
-                <li>Contributed to design of an NLP-based free-text analysis workflow for classifying injury-related emergency department visits.</li>
-                <li>Coordinated training and activities for interns and volunteers, providing guidance on their research projects.</li>
-              </ul>
-            </div>
+            <ul class="bullet-list">
+              <li>Led investigation of Lyme disease cases, including chart review, patient interviews, and education</li>
+              <li>Performed surveillance and epidemiologic investigations of disease outbreaks, poisonings, and reportable conditions.</li>
+              <li>Conducted analyses of health issues using SAS, R, and ArcGIS to provide reports and presentations to stakeholders.</li>
+              <li>Created Power BI dashboards to monitor spatiotemporal trends in emergency department visits and fatalities.</li>
+              <li>Contributed to design of an NLP-based free-text analysis workflow for classifying injury-related emergency department visits.</li>
+              <li>Coordinated training and activities for interns and volunteers, providing guidance on their research projects.</li>
+            </ul>
           </div>
 
           <div class="experience">
@@ -347,12 +341,10 @@
                 <small class="location-block">Miami, FL</small>
               </div>
             </div>
-            <div class="responsibilities">
-              <ul class="bullet-list">
-                <li>Led and supported student staff to deliver high-quality simulation experiences and Basic Life Support courses.</li>
-                <li>Collected and analyzed Qualtrics satisfaction survey data to present quality improvement opportunities.</li>
-              </ul>
-            </div>
+            <ul class="bullet-list">
+              <li>Led and supported student staff to deliver high-quality simulation experiences and Basic Life Support courses.</li>
+              <li>Collected and analyzed Qualtrics satisfaction survey data to present quality improvement opportunities.</li>
+            </ul>
           </div>
 
           <div class="experience">
@@ -366,46 +358,101 @@
                 <small class="location-block">Miami, FL</small>
               </div>
             </div>
-            <div class="responsibilities">
-              <ul class="bullet-list">
-                <li>Provided comprehensive care for up to 15 patients daily while adhering to infection control protocols.</li>
-              </ul>
-            </div>
+            <ul class="bullet-list">
+              <li>Provided comprehensive care for up to 15 patients daily, monitoring vital signs, intake/output, and glucose levels.</li>
+              <li>Adhered to infection control protocols during patient care, specimen collection, and equipment sanitation.</li>
+            </ul>
           </div>
         </section>
 
         <section>
-          <h2><i class="bi bi-easel-fill"></i>Fellowships and Teaching Experience</h2>
+          <h2><i class="bi bi-award-fill"></i>Grants &amp; Fellowships</h2>
           <hr>
 
           <div class="experience">
             <div class="header">
               <div>
-                <h3>National Data Science Teaching Fellow, Train the Trainers Program</h3>
-                <small>NIH-funded fellowship</small>
+                <h3>Data Science Team Training Grant</h3>
+                <small>Council of State and Territorial Epidemiologists</small>
+                <small class="preamble">$12,000 award &mdash; FL DOH Miami-Dade, Team Member</small>
+              </div>
+              <div>
+                <span class="date-block">October 2025 - October 2026</span>
+              </div>
+            </div>
+            <ul class="bullet-list">
+              <li>Supports applied public health data science training and development of a team-based data science project with expert mentorship.</li>
+            </ul>
+          </div>
+
+          <div class="experience">
+            <div class="header">
+              <div>
+                <h3>National Data Science Teaching Fellow</h3>
+                <small>Train the Trainers Program (NIH-funded) &mdash; Morehouse School of Medicine</small>
               </div>
               <div>
                 <span class="date-block">Fall '25, Spring '26</span>
               </div>
             </div>
-            <div class="responsibilities">
-              <ul class="bullet-list">
-                <li>Teaches 10-week R courses for health researchers focused on R fundamentals, data wrangling, visualization, version control with Git, Quarto and R Markdown, and functions.</li>
-              </ul>
-            </div>
+            <ul class="bullet-list">
+              <li>Teaches 10-week R courses for health researchers covering R fundamentals, data wrangling, visualization, Quarto/R Markdown, and functional programming.</li>
+              <li>Award includes fully funded travel and registration to attend Posit Conference.</li>
+            </ul>
           </div>
         </section>
 
         <section>
           <h2><i class="bi bi-kanban-fill"></i>Selected Projects</h2>
           <hr>
-          <ul class="bullet-list">
-            <li>Contributed to survey-weighted analyses evaluating associations between cannabis use and biological aging outcomes using nationally representative NHANES data.</li>
-            <li>Identified predictors of early leiomyosarcoma recurrence using Cox and Fine-Gray models and developed a Shiny app used by an oncology team to visualize competing risks.</li>
-            <li>Evaluated associations between heavy metal exposures and parkinsonism using mixture modeling and elastic net.</li>
-            <li>Collaborated with professors on survey design and analysis to evaluate the effectiveness of a new training program.</li>
-            <li>Contributed to development of REDCapSync and nhanesdata packages to support reproducible data pipelines.</li>
-          </ul>
+          <div class="project-item">
+            <strong>Leiomyosarcoma Recurrence Risk Modeling &amp; App</strong>
+            <p>Identified predictors of early recurrence using logistic, Cox, and Fine-Gray competing risks models; built a Shiny app enabling the oncology team to generate custom cumulative incidence curves; contributed unit tests and documentation to the REDCapSync R package.</p>
+          </div>
+          <div class="project-item">
+            <strong>Cannabis Use &amp; Biological Aging</strong>
+            <p>Survey-weighted GLM and random forest analyses on nationally representative NHANES data examining cannabis-aging associations across survey cycles; contributed to the nhanesdata R package for reproducible cross-cycle workflows.</p>
+          </div>
+          <div class="project-item">
+            <strong>Heavy Metal Exposures &amp; Parkinsonism</strong>
+            <p>Applied WQS mixture modeling, regularization, and multivariable methods to evaluate heavy metal exposure-parkinsonism associations; assisted design of a PostgreSQL database for an NIH-funded longitudinal study on WTC first responders.</p>
+          </div>
+          <div class="project-item">
+            <strong>Enhancing Nurse Anesthesia Education</strong>
+            <p>Employed proportional odds and multinomial logistic regression comparing student perceptions across novel vs. traditional training modalities as well as attitudes toward artificial intelligence in nurse anesthesia education; contributed to survey design and statistical analysis for program evaluation and manuscripts.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2><i class="bi bi-journal-text"></i>Publications</h2>
+          <hr>
+
+          <div class="pub-subsection">
+            <h4>Published</h4>
+            <ol class="pub-list">
+              <li>Grealis, K., Baral, A., <strong>Neugaard, N. (formerly Goulett)</strong>, et al. (2026). <span class="pub-title">nhanesdata: Harmonized Access to NHANES Survey Data.</span> R package version 0.2.1.</li>
+              <li>Hartoyo, M., <strong>Goulett, N.</strong>, et al. (2025). <span class="pub-title">Underrepresentation of Black participants in systemic sclerosis clinical trials: the U.S.A. and southeast region.</span> <em>Clinical Rheumatology.</em></li>
+              <li>Hartoyo, M., <strong>Goulett, N.</strong>, et al. (2025). <span class="pub-title">Underrepresentation of Black Individuals in Basal Cell and Squamous Cell Carcinoma Clinical Trials: A Comparison to an Insurance Claimant Cohort.</span> <em>JEADV Clinical Practice.</em></li>
+              <li>Burke, S. L., Grudzien, A., Li, T., <strong>Goulett, N.</strong>, et al. (2025). <span class="pub-title">Brain Structures Associated with Depression in Older Adults in the National Alzheimer's Coordinating Center Uniform Data Set.</span> <em>Journal of Geriatric Psychiatry and Neurology.</em></li>
+              <li>Burke, S. L., Grudzien, A., Li, T., Garcia, S., Sales Martinez, S., Jurich, E., Jimenez, D. R., Hernandez, J., Liu, Q., Tyrell, T. A., <strong>Goulett, N.</strong>, et al. (2025). <span class="pub-title">The influence of socioeconomic factors on the correlation between apolipoprotein ε4 genotype and cognitive outcomes in a multi-ethnic sample living with HCV and HIV.</span> <em>International Journal of STD &amp; AIDS.</em></li>
+            </ol>
+          </div>
+
+          <div class="pub-subsection">
+            <h4>Manuscripts Under Review</h4>
+            <ol class="pub-list">
+              <li>Olson, J., Travo, A., Olla, P., <strong>Goulett, N.</strong>, et al. <span class="pub-title">Assessing CRNA Students' Perspectives on Artificial Intelligence in Education: A Cross-Sectional Study.</span> <em>Under review.</em></li>
+              <li>Lewis, F., <strong>Goulett, N.</strong>, et al. <span class="pub-title">Metal Mixtures and Parkinsonism: From Weighted Quantile Sum Regression to Exposure Risk Score-Guided Autoantibody Profiling.</span> <em>Under review.</em></li>
+              <li>Rose, B., Chattopadhyay, P., <strong>Goulett, N.</strong>, et al. <span class="pub-title">Pan-Sarcoma Database (PSDB): An update on Miami's Collaborative Multi-User Data Pipeline of Sarcoma Data Using REDCap and R Coding.</span> <em>Under review.</em></li>
+            </ol>
+          </div>
+
+          <div class="pub-subsection">
+            <h4>Presentations</h4>
+            <ul class="pub-list" style="list-style:none;padding-left:0;">
+              <li>Marquez, R., <strong>Goulett, N.</strong> (March 2025). <span class="pub-title">Understanding the Neurodegenerative Pathway: PTSD, Alzheimer's, and Health Disparities in 9/11 Responders: Phase I.</span> Stempel College Environmental Health Science Seminar, Miami, FL.</li>
+            </ul>
+          </div>
         </section>
       </article>
     </main>
